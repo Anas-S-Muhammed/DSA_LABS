@@ -32,21 +32,21 @@ public class BinarySearchIterative {
 
     // Driver code
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 7, 8, 9};
-        int x = 5;
+        int[] arr = new int[1_000_000];
+        for (int i = 0; i < 1_000_000; i++) {
+            arr[i] = i + 1;
+        }
 
+        int x = 500_000;
+
+        long startTime = System.nanoTime();
         if (iterativeFunction(arr, x)) {
             System.out.println("Element found!");
         } else {
             System.out.println("Element not found!");
         }
+        long endTime = System.nanoTime();
 
-        x = 8;
-
-        if (iterativeFunction(arr, x)) {
-            System.out.println("Element found!");
-        } else {
-            System.out.println("Element not found!");
-        }
+        System.out.println("Time taken (nanoseconds): " + (endTime - startTime));
     }
 }

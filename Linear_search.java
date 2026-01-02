@@ -1,6 +1,6 @@
 import java.io.*;
 
-class GFG {
+class Linear_search {
 
     public static int search(int arr[], int N, int x) {
         // Iterate over the array in order to
@@ -13,14 +13,23 @@ class GFG {
     }
 
     public static void main(String args[]) {
-        int arr[] = { 2, 3, 4, 10, 40 };
-        int x = 10;
+        int arr[] = new int[1_000_000];
+        for (int i = 0; i < 1_000_000; i++) {
+            arr[i] = i + 1;
+        }
 
+        int x = 500_000;
+
+        long startTime = System.nanoTime();
         int result = search(arr, arr.length, x);
+        long endTime = System.nanoTime();
 
         if (result == -1)
             System.out.print("Element is not present in array");
         else
             System.out.print("Element is present at index " + result);
+
+        System.out.println();
+        System.out.println("Time taken (nanoseconds): " + (endTime - startTime));
     }
 }
