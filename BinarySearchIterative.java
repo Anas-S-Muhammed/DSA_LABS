@@ -4,7 +4,7 @@ public class BinarySearchIterative {
     // Iterative Binary Search method
     public static boolean iterativeFunction(int[] arr, int x) {
         int start = 0;
-        int end = arr.length - 1;
+        int end = arr.length - 1; 
 
         // Iterate while start does not cross end
         while (start <= end) {
